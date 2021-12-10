@@ -11,6 +11,7 @@ export const exportCSV: Handler = async (event) => {
 
         await sftpClient.connect(sftpConfig)
         await sftpClient.put(data, remote)
+        await sftpClient.end()
 
         return {
             statusCode: 200,
